@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshort_bear=self.webpackChunkshort_bear||[]).push([[423],{8825:function(t,e,r){r.r(e);var a=r(7294);e.default=function(t){var e=t.data.category;return a.createElement("div",null,e.frontmatter.title)}}}]);
+//# sourceMappingURL=component---src-templates-category-jsx-bb86725b94641de0ff15.js.map

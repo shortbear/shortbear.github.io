@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshort_bear=self.webpackChunkshort_bear||[]).push([[827],{5450:function(e,t,r){r.r(t);var a=r(7294);t.default=function(e){e.data;return a.createElement("div",null,"How to")}}}]);
+//# sourceMappingURL=component---src-templates-how-to-jsx-2c95de4d8c6d6b8bdbf7.js.map
