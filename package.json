@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.11",
     "gatsby-plugin-postcss": "^5.23.0",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   }
