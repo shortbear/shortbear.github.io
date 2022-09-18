@@ -8,6 +8,7 @@ const HomePage = () => {
         title={`ShortBear - Coding tips, tricks and FAQs.`} 
         description={`Learn how to code while keeping your sanity.`}
       />
+      Hi
     </>
   )
 }
