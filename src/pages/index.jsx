@@ -1,8 +1,14 @@
 import React from "react";
+import SEO from '../components/SEO';
 
 const HomePage = () => {
   return (
-    <div>Home</div>
+    <>
+      <SEO 
+        title={`ShortBear - Coding tips, tricks and FAQs.`} 
+        description={`Learn how to code while keeping your sanity.`}
+      />
+    </>
   )
 }
 
