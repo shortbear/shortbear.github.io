@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `ShortBear`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://shortbear.com`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
