@@ -3,7 +3,15 @@ module.exports = {
     title: `ShortBear`,
     siteUrl: `https://shortbear.com`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: [{
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: "GTM-MCWFBZM",
+      includeInDevelopment: false,
+      // Defaults to false
+      enableWebVitalsTracking: true,
+    },
+  }, "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
