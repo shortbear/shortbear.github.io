@@ -1,10 +1,10 @@
 import React from "react";
-import SEO from '../components/SEO';
+import Head from '../components/Head';
 
 const HomePage = () => {
   return (
     <>
-      <SEO 
+      <Head 
         title={`ShortBear - Coding tips, tricks and FAQs.`} 
         description={`Learn how to code while keeping your sanity.`}
       />

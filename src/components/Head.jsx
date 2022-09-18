@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const SEO = ({title, description, snippet}) => {
+const Head = ({title, description, snippet}) => {
   return (
     <Helmet>
       <title>{title}</title>
@@ -14,4 +14,4 @@ const SEO = ({title, description, snippet}) => {
   )
 }
 
-export default SEO;
+export default Head;
