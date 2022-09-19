@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-jsx","path":"/","result":{"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-index-jsx","path":"/","result":{"data":{"categories":{"nodes":[{"frontmatter":{"title":"JavaScript","slug":"javascript","logo":"js.png","topicsCovered":["Arrays","Objects","Strings","Numbers","Booleans","Loops","Functions"]}}]}},"pageContext":{}},"staticQueryHashes":[]}
