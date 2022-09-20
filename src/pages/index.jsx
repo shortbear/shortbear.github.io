@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Head from '../components/Head';
 import { Card } from '../components/Card'
 import { SimpleLayout } from '../components/SimpleLayout'
@@ -33,12 +34,11 @@ const HomePage = ({ data }) => {
           {categories.nodes.map(({frontmatter: category}) => (
             <Card as="li" key={category.title}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <img
-                  src={`/images/logos/${category.logo}`}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                />
+                <GatsbyImage 
+                    image={getImage(category.logo)}
+                    alt={`${category.title} Logo`}
+                    className='h-8 w-8'
+                  />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={`/${category.slug}`}>{category.title}</Card.Link>
@@ -67,8 +67,12 @@ query AllCategories {
       frontmatter {
         title
         slug
-        logo
         topicsCovered
+        logo {
+          childImageSharp {
+            gatsbyImageData(width: 40)
+          }
+        }
       }
     }
   }

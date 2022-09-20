@@ -2,7 +2,7 @@
 templateKey: category
 title: JavaScript
 slug: javascript
-logo: js.png
+logo: ../images/logos/js.png
 topicsCovered:
   - Arrays
   - Objects
