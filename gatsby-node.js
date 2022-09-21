@@ -11,7 +11,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark(filter: {frontmatter: {templateKey: {ne: null}}}) {
           nodes {
             id
-            fileAbsolutePath
+            fields {
+              slug
+            }
             frontmatter {
               templateKey
             }
@@ -35,9 +37,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const context = {
         id: post.id,
+        slug: post.fields.slug
       };
       createPage({
-        path: `/${post.fileAbsolutePath.match(/src\/pages\/(.+)\.md/)[1]}/`,
+        path: post.fields.slug,
         component: path.resolve(
           `./src/templates/${String(post.frontmatter.templateKey)}.jsx`
         ),

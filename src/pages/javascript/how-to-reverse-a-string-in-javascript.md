@@ -2,11 +2,11 @@
 templateKey: how-to
 title: How to reverse a string in JavaScript
 category: javascript
+date: 2022-08-31
+excerpt: In this short tutorial, I'll show you how to reverse a string in JavaScript.
 image: how-to-reverse-a-string-in-javascript.007.png
 video:
-  uploadDate: 2022-09-01T03:16:32.943Z
   name: How to reverse a string in JavaScript
-  description: In this short tutorial, I'll show you how to reverse a string in JavaScript.
   url: https://youtu.be/6vrxLx7gbpA
   thumbnailUrl: how-to-reverse-a-string-in-javascript.001.png
   duration: 1:32

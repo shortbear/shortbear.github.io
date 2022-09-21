@@ -1,0 +1,1 @@
+export const extractIdFromUrl = (url) => url.match(/^https:\/\/youtu.be\/(.+)$/)[1]
