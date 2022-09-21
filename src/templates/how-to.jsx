@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { Helmet } from "react-helmet";
+import Head from "../components/Head";
 import { Container } from '../components/Container'
 import { Prose } from '../components/Prose'
 import YouTubeEmbed from "../components/YouTubeEmbed";
@@ -25,14 +25,11 @@ const HowTo = ({ data }) => {
   const {howTo} = data;
   return (
     <>
-      <Helmet>
-        <title>{howTo.frontmatter.title}</title>
-        <meta
-          name="description"
-          content={howTo.frontmatter.video.description}
-        />
-        <script type="application/ld+json">{howToToSnippet(howTo.frontmatter)}</script>
-      </Helmet>
+      <Head 
+        title={howTo.frontmatter.title} 
+        description={howTo.frontmatter.excerpt} 
+        snippet={howToToSnippet(howTo)}
+      />
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
@@ -64,7 +61,7 @@ const HowTo = ({ data }) => {
                 <YouTubeEmbed url={howTo.frontmatter.video.url} />
 
                 {howTo.frontmatter.steps.map((s, i) => (
-                  <div key={i}>
+                  <div key={i} id={`step${i}`}>
                     <h2>Step {i+1}: {s.name}</h2>
                     <p>{s.text}</p>
                     <div dangerouslySetInnerHTML={{__html: markdownToHtml(s.body)}} />
@@ -85,6 +82,9 @@ export const pageQuery = graphql`
 query HowToById($id: String!) {
   howTo: markdownRemark(id: {eq: $id}, frontmatter: {templateKey: {eq: "how-to"}}) {
     id
+    fields {
+      slug
+    }
     frontmatter {
       title
       category
