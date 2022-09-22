@@ -3,7 +3,7 @@ module.exports = {
     title: `ShortBear`,
     siteUrl: `https://shortbear.com`
   },
-  plugins: ["gatsby-plugin-postcss", {
+  plugins: ["gatsby-plugin-cname", "gatsby-plugin-postcss", {
     resolve: "gatsby-plugin-google-tagmanager",
     options: {
       id: "GTM-MCWFBZM",
