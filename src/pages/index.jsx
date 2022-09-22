@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Head from '../components/Head';
+import Seo from '../components/Seo';
 import { Card } from '../components/Card'
 import { SimpleLayout } from '../components/SimpleLayout'
 
@@ -16,14 +16,17 @@ const LinkIcon = (props) => {
   )
 }
 
+export const Head = ({data}) => (
+  <Seo 
+    title={`ShortBear - Coding tips, tricks and FAQs.`} 
+    description={`Learn how to code while keeping your sanity.`}
+  />
+)
+
 const HomePage = ({ data }) => {
   const {categories} = data;
   return (
     <>
-      <Head 
-        title={`ShortBear - Coding tips, tricks and FAQs.`} 
-        description={`Learn how to code while keeping your sanity.`}
-      />
       <SimpleLayout
         title={`"Learning to code makes me feel so dumb!"`}
         intro="Getting stuck when coding will make you want to take up day drinking. Trust me, you're not alone. That's why I compiled a list of common questions to help you in your journey. Just choose what language you're working on from the links below."

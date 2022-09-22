@@ -24,6 +24,7 @@ export const faqsToSnippet = (faqs) => {
 
 const createStepToSnippet = (slug) => {
   const stepToSnippet = ({name, text, image}, i) => {
+    console.log({i});
     image = `https://shortbear.com/images/${image}`
     return {
       "@type": "HowToStep",
@@ -81,9 +82,8 @@ export const howToToSnippet = (howTo) => {
       "duration": formatDuration(video.duration),
       "hasPart": steps.map(stepToClip)
     },
-    "step": steps.map(s => stepToSnippet(s, slug))
+    "step": steps.map(stepToSnippet)
   }
-  console.log({obj});
   return obj;
 }
 

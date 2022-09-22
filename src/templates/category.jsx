@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import Head from "../components/Head";
+import Seo from "../components/Seo";
 import { Card } from "../components/Card";
 import { SimpleLayout } from "../components/SimpleLayout";
 import { formatDate } from '../utils/formatDate';
@@ -35,11 +34,20 @@ function Article({ article }) {
   )
 }
 
+export const Head = ({ data }) => {
+  const {category} = data;
+  return (
+    <Seo 
+      title={`${category.frontmatter.title} Tips, Tricks and Articles`} 
+      description={category.frontmatter.excerpt} 
+    />
+  )
+}
+
 const Category = ({ data }) => {
   const {category, articles} = data;
   return (
     <>
-      <Head title={`${category.frontmatter.title} Tips, Tricks and Articles`} description={category.frontmatter.excerpt} />
       <SimpleLayout
         title={category.frontmatter.title}
         intro={category.frontmatter.excerpt}

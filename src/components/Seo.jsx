@@ -1,17 +1,16 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 
-const Head = ({title, description, snippet}) => {
+const Seo = ({title, description, snippet}) => {
   return (
-    <Helmet>
+    <>
       <title>{title}</title>
       <meta
           name="description"
           content={description}
         />
       {snippet ? <script type="application/ld+json">{JSON.stringify(snippet)}</script> : null}
-    </Helmet>
+    </>
   )
 }
 
-export default Head;
+export default Seo;

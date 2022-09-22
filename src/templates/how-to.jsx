@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Head from "../components/Head";
+import Seo from "../components/Seo";
 import { Container } from '../components/Container'
 import { Prose } from '../components/Prose'
 import YouTubeEmbed from "../components/YouTubeEmbed";
@@ -21,15 +21,21 @@ function ArrowLeftIcon(props) {
   )
 }
 
+export const Head = ({ data }) => {
+  const { howTo } = data;
+  return (
+    <Seo 
+      title={howTo.frontmatter.title} 
+      description={howTo.frontmatter.excerpt} 
+      snippet={howToToSnippet(howTo)}
+    />
+  )
+}
+
 const HowTo = ({ data }) => {
   const {howTo} = data;
   return (
     <>
-      <Head 
-        title={howTo.frontmatter.title} 
-        description={howTo.frontmatter.excerpt} 
-        snippet={howToToSnippet(howTo)}
-      />
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
@@ -46,7 +52,7 @@ const HowTo = ({ data }) => {
                   {howTo.frontmatter.title}
                 </h1>
                 <time
-                  dateTime={howTo.frontmatter.video.uploadDate}
+                  dateTime={howTo.frontmatter.date}
                   className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
